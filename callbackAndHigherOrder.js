@@ -5,10 +5,11 @@
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-// CODE HERE
-function multiply(num1, num2, callback) {
+// CODE HERE                                                                is only a fuction when you call it on the next line
+function multiply(num1, num2, callback) { //function (the fuction) variable, variable, fuction
   return callback(num1 * num2)
 }
+//also would read like multiply(4, 3, (num1 * num2)
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -84,11 +85,11 @@ last(names, lastName => {
 */
 
 // CODE HERE 
-function contains(arr, name, callback){
-  if (arr.includes(name) === true ){
-    callback(true)
-   }  else {callback(false)  
-  }
+function contains(arr, name, callback){  //function contains(names, 'Colt', result){
+  if (arr.includes(name) === true ){     //if (names.includes('Colt) === true){
+    callback(true)                       //result(true)}
+   }  else {callback(false)              //else {result(false)}
+  }           
 }
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -125,20 +126,18 @@ contains(names, 'Colt', result => {
 //   }
 //   callback(arr)
 // }
-const uniq = (arr, callback) => {
-  for (let i = 0; i < arr.length; i++) {
-      for (let x = i + 1; x < arr.length; x++) {
-          if (arr[i] === arr[x]) {
-              arr.splice(x, 1)
-              x--
+const uniq = (arr, callback) => {                      //const uniq = names, modified array(which equals uniqArr) =>{
+  for (let i = 0; i < arr.length; i++) {               //for (let index=0; while index is less than the length; loop up)
+      for (let x = i + 1; x < arr.length; x++) {       //for (let xenax=0; while xenex is less than the length; loop up)
+          if (arr[i] === arr[x]) {                     //if (names[placement in array] === names[placement in array] {}
+              arr.splice(x, 1)                //names.splice(x (being where you want to begin splice), 1 how many to splice)
+              x--                                      //x loop back(make sure to stop, if x++ youd forever loop)
           }
       }
   }
 
-  callback(arr)
+  callback(arr)                       //modified array = uniqArr //<---------modified array at the end its all modified
 }
-
-
 // /*
 //   Invoke the uniq function, passing in the names array from above and a callback function.
 //   The callback function should take in one parameter called uniqArr.
@@ -208,7 +207,7 @@ var users = [
 
 // CODE HERE 
 function getUserById(users, id, callback){
-  for (i=0; i < users.length; i++)
+  for (let i=0; i < users.length; i++)
   if (users[i].id === id) {
     return callback(users[i])
   }
@@ -239,8 +238,14 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
+function addingFactory(num1){
+  return innerFuction(num1 + num1){
+    console.log(innerFuction)               //not sure whats up with this line... Double check everything
+     }
+    }
+addingFactory(4)
 
-/*
+    /*
   Now that you have addingFactory, you can create other
   functions from it. 
 
